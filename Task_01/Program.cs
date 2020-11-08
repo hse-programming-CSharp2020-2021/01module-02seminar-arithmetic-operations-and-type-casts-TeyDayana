@@ -27,21 +27,37 @@
 using System;
 using System.Globalization;
 
-namespace Task_01 {
-	class Program {
-		static void Main(string[] args) {
-			CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
-			double x;
-			// Ввод данных. 
-			x = double.Parse(Console.ReadLine());
+namespace Task_01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
+            double x;
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine(Polinom(x).ToString("F2", CultureInfo.GetCultureInfo("ru-RU")));
+            Console.Read();
+        }
 
-			// Вычисление и вывод данных.
-			Console.WriteLine(Function(x).ToString("F2", CultureInfo.GetCultureInfo("ru-RU")));
+        // Метод вычисления значения полинома.
+        static double Polinom(double x)
+        {
+            return 12 * QuickPow(x, 4) + 9 * QuickPow(x, 3) - 3 * QuickPow(x, 2) + 2 * x - 4;
+        }
 
-		}
-
-		static double Function(double x) {
-			return 12*x*x*x*x + 9*x*x*x - 3*x*x + 2*x - 4;
-		}
-	}
+        // Метод быстрого возведения числа x в степень pow.
+        static double QuickPow(double x, int pow)
+        {
+            if (pow == 1)
+                return x;
+            else if (pow % 2 == 0)
+            {
+                double y = QuickPow(x, pow / 2);
+                return y * y;
+            }
+            else
+                return x * QuickPow(x, pow - 1);
+        }
+    }
 }
