@@ -52,18 +52,15 @@ namespace Task_03 {
                 Console.WriteLine("complex roots");
             else
             {
-				double x1 = (-b-Math.Sqrt(discriminant)) / (2 * a);
-				double x2 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+				double x1 = (-b+Math.Sqrt(discriminant)) / (2 * a);
+				double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
 
-                if (x1 > x2)
-                {
-                    Console.WriteLine($"{x1:f2}");
-                    Console.WriteLine($"{x2:f2}");
-                }
-                else
-                {
-					Console.WriteLine($"{x2:f2}");
+				if (x1 == x2)
 					Console.WriteLine($"{x1:f2}");
+				else
+				{
+					Console.WriteLine($"{x1:f2}");
+					Console.WriteLine($"{x2:f2}");
 				}
 			}
 		}
