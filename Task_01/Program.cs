@@ -25,17 +25,18 @@
  */
 
 using System;
+using System.Globalization;
 
 namespace Task_01 {
 	class Program {
 		static void Main(string[] args) {
-
+			CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
 			double x;
 			// Ввод данных. 
-			x = double.Parse(Console.ReadLine().Replace('.', ','));
+			x = double.Parse(Console.ReadLine());
 
 			// Вычисление и вывод данных.
-			Console.WriteLine($"{Function(x):f2}".Replace('.', ','));
+			Console.WriteLine(Function(x).ToString("F2", CultureInfo.GetCultureInfo("ru-RU")));
 
 		}
 
