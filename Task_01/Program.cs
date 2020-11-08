@@ -30,14 +30,13 @@ using System.Globalization;
 namespace Task_01 {
 	class Program {
 		static void Main(string[] args) {
-			CultureInfo c = new CultureInfo("ru-RU");
 
 			double x;
 			// Ввод данных. 
 			x = double.Parse(Console.ReadLine());
 
 			// Вычисление и вывод данных.
-			Console.WriteLine(x.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US")));
+			Console.WriteLine($"{Function(x):f2}", "ru-RU");
 
 		}
 
