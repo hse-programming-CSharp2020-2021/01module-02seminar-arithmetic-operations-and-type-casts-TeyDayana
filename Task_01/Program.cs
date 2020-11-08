@@ -31,33 +31,40 @@ namespace Task_01
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
+            CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
             double x;
             x = double.Parse(Console.ReadLine());
-            Console.WriteLine(Polinom(x).ToString("F2", CultureInfo.GetCultureInfo("ru-RU")));
-            Console.Read();
+            Console.WriteLine($"{Function(x):f2}");
+            Console.ReadLine();
+
         }
 
-        // Метод вычисления значения полинома.
-        static double Polinom(double x)
+        static double Function(double x)
         {
-            return 12 * QuickPow(x, 4) + 9 * QuickPow(x, 3) - 3 * QuickPow(x, 2) + 2 * x - 4;
+            double result = 12 * MyPow(x, 4) + 9 * MyPow(x, 3) - 3 * MyPow(x, 2) + 2 * x - 4;
+            return result;
         }
 
-        // Метод быстрого возведения числа x в степень pow.
-        static double QuickPow(double x, int pow)
+        static double MyPow(double x, int pow)
         {
-            if (pow == 1)
-                return x;
-            else if (pow % 2 == 0)
+            if (pow == 0)
             {
-                double y = QuickPow(x, pow / 2);
-                return y * y;
+                return 1;
             }
             else
-                return x * QuickPow(x, pow - 1);
+            {
+                if (pow % 2 == 1)
+                {
+                    return x * MyPow(x, pow - 1);
+                }
+                else
+                {
+                    x = MyPow(x, pow / 2);
+                    return x * x;
+                }
+            }
         }
     }
 }
