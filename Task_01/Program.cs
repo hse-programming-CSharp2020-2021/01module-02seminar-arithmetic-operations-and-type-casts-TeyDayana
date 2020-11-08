@@ -25,7 +25,6 @@
  */
 
 using System;
-using System.Globalization;
 
 namespace Task_01 {
 	class Program {
@@ -36,7 +35,7 @@ namespace Task_01 {
 			x = double.Parse(Console.ReadLine());
 
 			// Вычисление и вывод данных.
-			Console.WriteLine($"{Function(x):f2}", "ru-RU");
+			Console.WriteLine($"{Function(x):f2}".Replace('.', ','));
 
 		}
 
