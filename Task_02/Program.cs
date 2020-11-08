@@ -38,7 +38,7 @@ namespace Task_02 {
 				thirdDigit = x % 10;
 
 			int max1, max2, min;
-			if (firstDigit > secondDigit && firstDigit > thirdDigit)
+			if (firstDigit >= secondDigit && firstDigit >= thirdDigit)
 			{
 				max1 = firstDigit;
 				if (secondDigit > thirdDigit)
@@ -52,7 +52,7 @@ namespace Task_02 {
 					min = secondDigit;
 				}
 			}
-			else if (secondDigit > firstDigit && secondDigit > thirdDigit)
+			else if (secondDigit >= firstDigit && secondDigit >= thirdDigit)
 			{
 				max1 = secondDigit;
 				if (firstDigit > thirdDigit)
