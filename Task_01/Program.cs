@@ -25,11 +25,12 @@
  */
 
 using System;
+using System.Globalization;
 
 namespace Task_01 {
 	class Program {
 		static void Main(string[] args) {
-			// TODO : Сменить локаль на "ru-RU". 
+			CultureInfo c = new CultureInfo("ru-RU");
 
 			double x;
 			// Ввод данных. 
@@ -41,11 +42,7 @@ namespace Task_01 {
 		}
 
 		static double Function(double x) {
-			// TODO : Реализовать вычисление функции F(x).
-		}
-
-		static double myPow(double x, int pow) {
-			// TODO : Реализовать быстрое возведение в степень.
+			return 12*x*x*x*x + 9*x*x*x - 3*x*x + 2*x - 4;
 		}
 	}
 }
