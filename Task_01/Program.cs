@@ -37,7 +37,7 @@ namespace Task_01 {
 			x = double.Parse(Console.ReadLine());
 
 			// Вычисление и вывод данных.
-			Console.WriteLine($"{Function(x):f2}", c);
+			Console.WriteLine(x.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US")));
 
 		}
 
