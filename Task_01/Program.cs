@@ -32,7 +32,7 @@ namespace Task_01 {
 
 			double x;
 			// Ввод данных. 
-			x = double.Parse(Console.ReadLine());
+			x = double.Parse(Console.ReadLine().Replace('.', ','));
 
 			// Вычисление и вывод данных.
 			Console.WriteLine($"{Function(x):f2}".Replace('.', ','));
