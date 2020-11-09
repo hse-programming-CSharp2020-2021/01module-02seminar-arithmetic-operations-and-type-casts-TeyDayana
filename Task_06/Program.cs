@@ -32,10 +32,12 @@ namespace Task_03
 		static void Main(string[] args)
 		{
 			// TODO : Сменить локаль на "ru-RU". 
-			CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
-			double sum = double.Parse(Console.ReadLine().Replace(',','.'));
-			int percent = int.Parse(Console.ReadLine()); 
+			CultureInfo.CurrentCulture = new CultureInfo("en-US");
+			double sum;
+			int percent;
 			// TODO : Считать вещественную и целочисленную переменную.
+			double.TryParse(Console.ReadLine(), out sum);
+			int.TryParse(Console.ReadLine(), out percent);
 
 			// TODO : Рассчитать бюджет на игры.
 			double onComputerGames = sum * percent / 100;
