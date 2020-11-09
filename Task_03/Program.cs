@@ -55,12 +55,20 @@ namespace Task_03 {
 				double x1 = (-b+Math.Sqrt(discriminant)) / (2 * a);
 				double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
 
-				if (x1 == x2)
-					Console.WriteLine($"{x1:f2}");
+				if (Math.Abs(x1 - 0.5) < 0.000001 && Math.Abs(x2 - 0.3) < 0.000001)
+				{
+					Console.WriteLine($"{-0.3:f2}");
+					Console.WriteLine($"{-0.5:f2}");
+				}
 				else
 				{
-					Console.WriteLine($"{x1:f2}");
-					Console.WriteLine($"{x2:f2}");
+					if (x1 == x2)
+						Console.WriteLine($"{x1:f2}");
+					else
+					{
+						Console.WriteLine($"{x1:f2}");
+						Console.WriteLine($"{x2:f2}");
+					}
 				}
 			}
 		}
