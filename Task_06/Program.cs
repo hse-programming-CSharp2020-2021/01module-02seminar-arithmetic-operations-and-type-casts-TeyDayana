@@ -33,7 +33,7 @@ namespace Task_03
 		{
 			// TODO : Сменить локаль на "ru-RU". 
 			CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
-			double sum = double.Parse(Console.ReadLine());
+			double sum = double.Parse(Console.ReadLine().Replace(',','.'));
 			int percent = int.Parse(Console.ReadLine()); 
 			// TODO : Считать вещественную и целочисленную переменную.
 
