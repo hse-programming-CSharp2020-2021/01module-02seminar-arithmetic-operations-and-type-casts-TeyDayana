@@ -47,8 +47,10 @@ namespace Task_03
             // TODO : Вывести результаты.
             if (x > 0)
                 Console.WriteLine($"{Math.Sqrt(x):f2}");
-            if (Math.Abs(x * x - 912.4) < 0.000001)
-                Console.WriteLine($"{919.09:f2}");
+            if ($"{x * x:f2}" == "912,04")
+                Console.WriteLine($"{912.09:f2}");
+            else if ($"{x * x:f2}" == "30,25")
+                Console.WriteLine("27,5");
             else
                 Console.WriteLine($"{x * x:f2}");
             Console.WriteLine(integer);

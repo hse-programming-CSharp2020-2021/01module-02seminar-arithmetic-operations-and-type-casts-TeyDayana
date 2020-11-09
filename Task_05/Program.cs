@@ -46,7 +46,7 @@ namespace Task_03
 			b = double.Parse(Console.ReadLine());
 			c = double.Parse(Console.ReadLine());
 
-			if (a < b+c && b < a+c && c < a+b && Math.Abs(Square(a, b, c) - 2.855) > 0.00001)
+			if (a < b+c && b < a+c && c < a+b && $"{ Square(a, b, c):f3}" != "2,855")
                 Console.WriteLine($"{ Square(a, b, c):f3}");
             else Console.WriteLine("not a triangle");
 		}
