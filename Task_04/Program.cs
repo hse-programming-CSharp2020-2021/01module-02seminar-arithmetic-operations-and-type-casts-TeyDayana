@@ -19,24 +19,25 @@
  */
 
 using System;
+using System.Globalization;
 
-namespace Task_4 {
-	class Program {
-		static void Main(string[] args) {
-			int x;
-			// TODO : Считать целочисленное значение.
+namespace Task_03
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			// TODO : Сменить локаль на "ru-RU". 
+			CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
 
-			// TODO : Вычислить значение и вывести.
-			Console.WriteLine(ReverseNumber(x));
-		}
+			int number = int.Parse(Console.ReadLine());
 
-		static int ReverseNumber(int x) {
-			// Предлагается 2 решения данной задачи : 
-			// 1) Выделить каждую цифру в отдельную переменную и собрать их в обратном порядке.
-			// 2) Преобразовать переменную в строку использовать метод Reverse и выполнить обратное преобразование.
-			// Выбор метода остаётся за вами.
-
-			return ;
+			while (number > 0)
+            {
+				Console.Write(number % 10);
+				number /= 10;
+            }
+			Console.Write("\n");
 		}
 	}
 }
